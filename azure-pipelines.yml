@@ -22,7 +22,7 @@ steps:
     goals: 'package'
 
 schedules:
-- cron: "0 23 * * *"
+- cron: "15 23 * * *"
   displayName: Daily midnight build
   branches:
     include:
