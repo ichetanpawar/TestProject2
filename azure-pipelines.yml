@@ -19,7 +19,7 @@ steps:
     goals: 'package'
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$/TestProject2/logs/prints.log'
+    PathtoPublish: '**/logs/prints.log'
     ArtifactName: 'log file artifact'
     publishLocation: 'Container'
 schedules:
