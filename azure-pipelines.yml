@@ -17,11 +17,13 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-- task: PublishBuildArtifacts@1
+
+
+- task: PublishTestResults@2
   inputs:
-    PathtoPublish: '**/logs/prints.log'
-    ArtifactName: 'log file artifact'
-    publishLocation: 'Container'
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/TEST-*.xml'
+
 schedules:
 - cron: "43 23 * * *"
   displayName: Daily midnight build
