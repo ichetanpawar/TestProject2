@@ -1,4 +1,11 @@
 # Maven
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(Build.BinariesDirectory)/logs'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
     
 trigger:
 - master
@@ -17,12 +24,6 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/logs/prints.log'
-    ArtifactName: 'Test Logs'
-    publishLocation: 'Container'
 
 schedules:
 - cron: "43 23 * * *"
