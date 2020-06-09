@@ -1,7 +1,7 @@
 # Maven
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/logs/'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/logs/prints.log'
     ArtifactName: 'drop'
     publishLocation: 'Container'
 # Build your Java project and run tests with Apache Maven.
