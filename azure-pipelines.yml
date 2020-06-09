@@ -17,15 +17,11 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
-
-- task: ArchiveFiles@2
+- task: PublishBuildArtifacts@1
   inputs:
-    rootFolderOrFile: '$(Build.BinariesDirectory)'
-    includeRootFolder: true
-    archiveType: 'zip'
-    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
-    replaceExistingArchive: true
-
+    PathtoPublish: '$/TestProject2/logs/prints.log'
+    ArtifactName: 'log file artifact'
+    publishLocation: 'Container'
 schedules:
 - cron: "43 23 * * *"
   displayName: Daily midnight build
