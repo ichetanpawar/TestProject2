@@ -20,7 +20,7 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/logs'
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)/logs/prints.log'
     ArtifactName: 'Test Logs'
     publishLocation: 'Container'
 
