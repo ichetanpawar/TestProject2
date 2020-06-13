@@ -20,16 +20,10 @@ steps:
     goals: 'package'
 
 
-- task: PublishTestResults@2
+- task: PublishPipelineArtifact@1
   inputs:
-    testResultsFormat: 'JUnit'
-    testResultsFiles: '**/TEST-*.xml'
-    
-- task: DownloadPipelineArtifact@2
-  inputs:
-    buildType: 'current'
-    artifactName: '**'
-    targetPath: '$(Pipeline.Workspace)'
+    targetPath: $(System.DefaultWorkingDirectory)/logs/
+    artifactName: Logs
 
 schedules:
 - cron: "43 23 * * *"
