@@ -1,4 +1,5 @@
 # Maven
+
     
 trigger:
 - master
@@ -23,12 +24,13 @@ steps:
   inputs:
     testResultsFormat: 'JUnit'
     testResultsFiles: '**/TEST-*.xml'
-
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(Pipeline.Workspace)/logs/prints.log' 
-    artifactName: 'drop'
     
+- task: DownloadPipelineArtifact@2
+  inputs:
+    buildType: 'current'
+    artifactName: '**'
+    targetPath: '$(Pipeline.Workspace)'
+
 schedules:
 - cron: "43 23 * * *"
   displayName: Daily midnight build
