@@ -38,6 +38,13 @@ steps:
       publishLocation: 'pipeline'
   condition: succeededOrFailed()
 
+- task: PublishPipelineArtifact@1
+  inputs:
+      targetPath: '$(Build.SourcesDirectory)'
+      artifact: 'Logs1'
+      publishLocation: 'pipeline'
+  condition: always()
+
 schedules:
 - cron: "43 23 * * *"
   displayName: Daily midnight build
