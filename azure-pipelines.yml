@@ -26,8 +26,15 @@ steps:
 
 - task: PublishPipelineArtifact@1
   inputs:
-      targetPath: '$(Build.SourcesDirectory)/results'
-      artifact: 'Results'
+      targetPath: '$(Build.SourcesDirectory)/logs'
+      artifact: 'Logs'
+      publishLocation: 'pipeline'
+  condition: always()
+
+- task: PublishPipelineArtifact@1
+  inputs:
+      targetPath: '$(Build.SourcesDirectory)/target'
+      artifact: 'Target results'
       publishLocation: 'pipeline'
   condition: succeededOrFailed()
 
