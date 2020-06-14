@@ -27,8 +27,8 @@ public class stepDefination {
 
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--ChromelessOptions");
-        chromeOptions.addArguments("--headless");
-        chromeOptions.addArguments("--no-sandbox");
+        chromeOptions.addArguments("headless");
+        chromeOptions.addArguments("no-sandbox");
 		//chromeOptions.addArguments("--disable-dev-shm-usage");
 		driver = new ChromeDriver(chromeOptions);
 		log.info("Opening google.co.in");
