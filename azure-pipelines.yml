@@ -13,6 +13,7 @@ steps:
    sudo apt install google-chrome-stable
    sudo apt-get install testng
    sudo apt install oracle-java8-installer
+   JAVA_HOME=/usr/lib/jvm/java-8-oracle
    sudo apt install maven
    java -cp "./lib/*:./bin"
    sudo apt-get -y install xvfb
