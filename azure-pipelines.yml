@@ -14,7 +14,7 @@ steps:
    sudo apt-get install testng
    sudo apt-get install default-jdk
    sudo apt-get -y install xvfb
-   Xvfb :0 -ac -screen 0 1024x768x24 &
+   Xvfb :99 -ac -screen 0 1280x1024x24 & export DISPLAY=:99 nice -n 10 x11vnc 2>&1 & google-chrome --no-sandbox & --port 4200
    cd /home/vsts/work/1/s/src/
    chmod +x chromedriver   
 - task: Maven@3
