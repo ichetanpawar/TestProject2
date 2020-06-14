@@ -12,14 +12,14 @@ steps:
    google-chrome --version
    sudo apt install google-chrome-stable
    sudo apt-get install testng
+   sudo apt install maven
    sudo apt install oracle-java8-installer
    JAVA_HOME=/usr/lib/jvm/java-8-oracle
-   sudo apt install maven
    java -cp "./lib/*:./bin"
-   sudo apt-get -y install xvfb
+   sudo apt-get install xvfb
    nohup Xvfb -ac :15 -screen 0 1280x1024x16 & export DISPLAY:15
-   cd /home/vsts/work/1/s/src/
-   chmod +x chromedriver   
+   xvfb-run /home/vsts/work/1/s/src/chromedriver
+    
 
 - task: Maven@3
   inputs:
