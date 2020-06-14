@@ -17,7 +17,8 @@ steps:
    JAVA_HOME=/usr/lib/jvm/java-8-oracle
    java -cp "./lib/*:./bin"
    sudo apt-get install xvfb
-   nohup Xvfb -ac :15 -screen 0 1280x1024x16 & export DISPLAY:15
+   cd /home/vsts/work/1/s/src/
+   chmod +x chromedriver
    xvfb-run /home/vsts/work/1/s/src/chromedriver
     
 
