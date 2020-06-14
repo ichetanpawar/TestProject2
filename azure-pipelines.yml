@@ -12,7 +12,8 @@ steps:
    google-chrome --version
    sudo apt install google-chrome-stable
    sudo apt-get install testng
-   sudo apt-get install default-jdk
+   sudo apt-get install oracle-java8-installer
+   sudo apt install maven
    sudo apt-get -y install xvfb
    nohup Xvfb -ac :15 -screen 0 1280x1024x16 & export DISPLAY:15
    cd /home/vsts/work/1/s/src/
