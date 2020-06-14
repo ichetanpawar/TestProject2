@@ -23,7 +23,7 @@ public class stepDefination {
 		System.out.println("User is on landing page");
 		log.info("User is on landing page");
 		
-		System.setProperty("webdriver.chrome.driver", ".\\src\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", ".//src//chromedriver");
 
 		ChromeOptions chromeOptions = new ChromeOptions();
 		chromeOptions.addArguments("--ChromelessOptions");
