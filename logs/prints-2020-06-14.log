@@ -1,0 +1,7 @@
+20:23:59.595 [main] INFO  stepDefinations.stepDefination - home page populated
+20:23:59.597 [main] INFO  stepDefinations.stepDefination - cards displyed
+20:23:59.599 [main] INFO  stepDefinations.stepDefination - User is on landing page
+20:24:02.641 [main] INFO  stepDefinations.stepDefination - Opening google.co.in
+20:24:02.641 [main] INFO  stepDefinations.stepDefination - Window maximized
+20:24:05.408 [main] INFO  stepDefinations.stepDefination - Window title:Google
+20:24:05.414 [main] INFO  stepDefinations.stepDefination - Current URL:https://www.google.co.in/

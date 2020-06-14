@@ -6,16 +6,36 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 import org.apache.logging.log4j.*;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+
 
 public class stepDefination {
 
 	public static Logger log=LogManager.getLogger(stepDefination.class.getName());
-	
+	public static WebDriver driver;
+
 	@Given("^User is on landing page$")
 	public void user_is_on_landing_page() {
 		//code to to naviagate to landing page
 		System.out.println("User is on landing page");
 		log.info("User is on landing page");
+		
+		System.setProperty("webdriver.chrome.driver", ".\\src\\chromedriver.exe");
+
+		ChromeOptions chromeOptions = new ChromeOptions();
+		chromeOptions.addArguments("--ChromelessOptions");
+        chromeOptions.addArguments("--headless");
+        chromeOptions.addArguments("--no-sandbox");
+		//chromeOptions.addArguments("--disable-dev-shm-usage");
+		driver = new ChromeDriver(chromeOptions);
+		log.info("Opening google.co.in");
+		log.info("Window maximized");
+		driver.get("https://www.google.co.in/");
+		log.info("Window title:"+driver.getTitle());
+		log.info("Current URL:"+driver.getCurrentUrl());
 	}
 	
 	//@When("^User login into application with username & password$")
