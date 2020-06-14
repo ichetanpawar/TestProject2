@@ -29,8 +29,9 @@ public class stepDefination {
 		chromeOptions.addArguments("--ChromelessOptions");
         chromeOptions.addArguments("--headless");
         chromeOptions.addArguments("--no-sandbox");
-		chromeOptions.addArguments("--remote-debugging-port=1557");
+		chromeOptions.addArguments("--remote-debugging-port=9222");
 		//chromeOptions.add_argument("--remote-debugging-port=9222");
+		chromeOptions = True;
 		chromeOptions.addArguments("--disable-dev-shm-usage");
 		driver = new ChromeDriver(chromeOptions);
 		log.info("Opening google.co.in");
