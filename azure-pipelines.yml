@@ -8,6 +8,11 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+- script: |
+   google-chrome --version
+   wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+   sudo dpkg -i google-chrome-stable_current_amd64.deb
+   
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
@@ -19,11 +24,12 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
 
-
 - task: PublishPipelineArtifact@1
   inputs:
-    targetPath: $(System.DefaultWorkingDirectory)/logs/
-    artifactName: Logs
+      targetPath: '$(Build.SourcesDirectory)/results'
+      artifact: 'Results'
+      publishLocation: 'pipeline'
+  condition: succeededOrFailed()
 
 schedules:
 - cron: "43 23 * * *"
