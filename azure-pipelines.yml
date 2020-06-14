@@ -10,8 +10,10 @@ pool:
 steps:
 - script: |
    google-chrome --version
-   wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-   sudo dpkg -i google-chrome-stable_current_amd64.deb
+   sudo apt install google-chrome-stable
+   sudo apt-get install testng
+   sudo apt-get install default-jdk
+   sudo apt-get -y install xvfb
    cd /home/vsts/work/1/s/src/
    chmod +x chromedriver   
 - task: Maven@3
