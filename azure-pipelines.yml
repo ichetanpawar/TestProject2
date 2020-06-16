@@ -20,6 +20,7 @@ steps:
    cd /home/vsts/work/1/s/src/
    chmod +x chromedriver
    xvfb-run /home/vsts/work/1/s/src/chromedriver
+   mvn test
 
 - task: Maven@3
   inputs:
