@@ -8,20 +8,13 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: |
-   google-chrome --version
-   sudo apt install google-chrome-stable
-   sudo apt-get install testng
-   sudo apt install maven
-   sudo apt install oracle-java8-installer
-   JAVA_HOME=/usr/lib/jvm/java-8-oracle
-   java -cp "./lib/*:./bin"
-   sudo apt-get install xvfb
-   cd /home/vsts/work/1/s/src/
-   chmod +x chromedriver
-   xvfb-run /home/vsts/work/1/s/src/chromedriver
-   mvn test
 
+- task: NuGetCommand@2
+  inputs:
+    command: 'pack'
+    packagesToPack: 'Install-Package Selenium.WebDriver.ChromeDriver -Version 83.0.4103.1400'
+    versioningScheme: 'off'
+    
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
