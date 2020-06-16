@@ -20,7 +20,7 @@ steps:
    cd /home/vsts/work/1/s/src/
    chmod +x chromedriver
    xvfb-run /home/vsts/work/1/s/src/chromedriver
-   xvfb-run java pom.xml
+   xvfb-run pom.xml
 
 - task: Maven@3
   inputs:
